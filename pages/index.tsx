@@ -1,12 +1,11 @@
-import Head from "next/head";
-import Footer from "./components/Footer";
-import Background from "./components/Background";
+import DefaultHead from "./components/DefaultHead";
 
 export default function Home() {
   return (
-    <Background>
-      {/* <h2>test</h2> */}
-      <Footer isHidden />
-    </Background>
+    <>
+      <DefaultHead />
+
+      {/* <Background></Background> */}
+    </>
   );
 }
