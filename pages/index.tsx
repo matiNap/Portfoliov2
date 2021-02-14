@@ -1,12 +1,18 @@
-import Head from "next/head";
-import Footer from "./components/Footer";
+import DefaultHead from "./components/DefaultHead";
 import Background from "./components/Background";
+import { useTranslation } from "react-i18next";
 
-export default function Home() {
+function Home() {
+  const { t } = useTranslation();
   return (
-    <Background>
-      {/* <h2>test</h2> */}
-      <Footer isHidden />
-    </Background>
+    <>
+      <DefaultHead />
+
+      <Background>
+        <div>{t("test")}</div>
+      </Background>
+    </>
   );
 }
+
+export default Home;
