@@ -32,11 +32,11 @@
   @include helpers.centerFlex(false);
   font-size: $fs-very-small;
   font-weight: bold;
-  margin-top: $spacing-small;
+  margin-top: $spacing-medium;
   cursor: pointer;
+  transition: all 0.2s ease-out;
 }
 
 .list li:hover {
-  transition: scale 0.3s;
-  transform: scale(1.1);
+  transform: scale(1.15);
 }
