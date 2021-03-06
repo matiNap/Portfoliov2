@@ -1,7 +1,7 @@
 import DefaultHead from "./components/DefaultHead";
 import Background from "./components/Background";
 import { useTranslation } from "react-i18next";
-import WebMenu from "./components/WebMenu";
+import withMenu from "./hocs/withMenu";
 
 function Home() {
   const { t } = useTranslation();
@@ -9,11 +9,9 @@ function Home() {
     <>
       <DefaultHead />
 
-      <Background>
-        <WebMenu />
-      </Background>
+      <Background></Background>
     </>
   );
 }
 
-export default Home;
+export default withMenu(Home);

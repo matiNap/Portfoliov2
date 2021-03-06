@@ -4,7 +4,6 @@ import Logo from "./Logo";
 import { menuData } from "../../helpers/index";
 import MenuItem from "./MenuItem";
 import { GoMarkGithub } from "react-icons/go";
-import Link from "next/link";
 
 const ICON_SIZE = 30;
 

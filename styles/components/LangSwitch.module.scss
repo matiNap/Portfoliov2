@@ -1,0 +1,33 @@
+@use '../helpers.scss';
+@import "../theme.scss";
+
+.container {
+  position: fixed;
+  right: 25px;
+  top: 25px;
+  cursor: pointer;
+  border-radius: 15px;
+  width: 76px;
+  height: 30px;
+  background-color: $primary-color;
+  box-shadow: 5px 0px 11px -6px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 5px 0px 11px -6px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 5px 0px 11px -6px rgba(0, 0, 0, 0.75);
+}
+
+.indicator {
+  position: absolute;
+  border-radius: 15px;
+  width: 38px;
+  height: 30px;
+  background-color: $accent-color;
+}
+
+.content {
+  position: absolute;
+  @include helpers.centerFlex(true);
+  justify-content: space-around;
+  width: 100%;
+  font-weight: bold;
+  height: 100%;
+}
