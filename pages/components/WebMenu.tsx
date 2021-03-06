@@ -14,10 +14,8 @@ const Menu = () => {
       <Logo />
 
       <ul className={styles.list}>
-        {menuData.map(({ title, icon }) => {
-          return (
-            <MenuItem {...{ title }} icon={icon({ color: "#fff", size: 30 })} />
-          );
+        {menuData.map(({ title, icon, routeKey }) => {
+          return <MenuItem {...{ title, routeKey }} icon={icon} />;
         })}
       </ul>
 
