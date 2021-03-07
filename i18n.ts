@@ -1,6 +1,9 @@
 import i18n from "i18next";
 import translationPL from "./public/locales/translation-pl.json";
 
+export const LANG_PL = "pl";
+export const LANG_EN = "en";
+
 const resources = {
   pl: {
     translation: translationPL,
@@ -9,7 +12,7 @@ const resources = {
 
 i18n.init({
   resources,
-  lng: "pl",
+  lng: "en",
   keySeparator: false,
   interpolation: {
     escapeValue: false,
@@ -17,4 +20,4 @@ i18n.init({
 });
 
 export default i18n;
-export const { t } = i18n;
+export const { t, changeLanguage } = i18n;
