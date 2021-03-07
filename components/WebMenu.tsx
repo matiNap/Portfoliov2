@@ -1,12 +1,12 @@
 import React from "react";
-import styles from "../../styles/components/WebMenu.module.scss";
+import styles from "../styles/components/WebMenu.module.scss";
 import Logo from "./Logo";
-import { menuData } from "../../helpers/index";
+import { menuData } from "../helpers/index";
 import MenuItem from "./MenuItem";
 import { GoMarkGithub } from "react-icons/go";
 import { useTranslation } from "react-i18next";
 import { useSpring } from "react-spring";
-import { LANG_PL } from "../../i18n";
+import { LANG_PL } from "../i18n";
 import { animated } from "react-spring";
 
 const ICON_SIZE = 30;

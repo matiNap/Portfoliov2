@@ -2,7 +2,7 @@ import i18n from "i18next";
 import translationPL from "./public/locales/translation-pl.json";
 
 export const LANG_PL = "pl";
-export const LANG_EN = "en";
+export const LANG_EN = "en-US";
 
 const resources = {
   pl: {
@@ -12,7 +12,7 @@ const resources = {
 
 i18n.init({
   resources,
-  lng: "en",
+  lng: LANG_EN,
   keySeparator: false,
   interpolation: {
     escapeValue: false,

@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
 import { useRouter } from "next/router";
-import { palette } from "../../styles/theme";
-import { IconProps } from "../../helpers/index";
+import { palette } from "../styles/theme";
+import { IconProps } from "../helpers/index";
 import { useTranslation } from "react-i18next";
 interface Props {
   title?: string;
