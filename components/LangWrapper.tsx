@@ -17,7 +17,7 @@ const LangWrapper = ({ children }: Props) => {
   useEffect(() => {
     const { locale } = router;
     const { user } = cookie;
-    console.log(user, locale, currentLang);
+
     if (locale) {
       if (!user || !user.lang)
         setCookie("lang", JSON.stringify({ lang: locale }));
