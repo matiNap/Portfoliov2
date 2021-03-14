@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useCookies } from "react-cookie";
 import { LANG_EN } from "../i18n";
 
-export default () => {
+const useCurrentLang = () => {
   const [cookie] = useCookies(["lang"]);
   const router = useRouter();
   const [currentLang, setCurrentLang] = useState(LANG_EN);
@@ -11,7 +11,7 @@ export default () => {
   useEffect(() => {
     const { user } = cookie;
     const { locale } = router;
-    console.log(locale, user);
+
     if (user && user.lang) {
       setCurrentLang(user.lang);
     } else if (locale) {
@@ -21,3 +21,5 @@ export default () => {
 
   return currentLang;
 };
+
+export default useCurrentLang;
