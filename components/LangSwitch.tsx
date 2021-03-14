@@ -30,8 +30,11 @@ const LangSwitch = ({}) => {
       onClick={() => {
         setLeftToggled(!leftToggled);
         const newLang = leftToggled ? LANG_EN : LANG_PL;
-        console.log(router);
-        router.replace(`/${newLang}`);
+
+        router.push(`/${newLang}`, undefined, {
+          shallow: true,
+          locale: newLang,
+        });
         i18n.changeLanguage(newLang);
         setCookie("user", JSON.stringify({ lang: newLang }));
       }}
