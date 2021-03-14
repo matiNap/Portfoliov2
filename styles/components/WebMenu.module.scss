@@ -5,7 +5,6 @@
   position: fixed;
   left: 0px;
   top: 0px;
-  width: 70px;
   height: 97vh;
 
   display: flex;
@@ -19,6 +18,8 @@
   box-shadow: 5px 0px 11px -6px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 5px 0px 11px -6px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 5px 0px 11px -6px rgba(0, 0, 0, 0.75);
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .list {
@@ -30,11 +31,15 @@
 
 .list li {
   @include helpers.centerFlex(false);
-  font-size: $fs-very-small;
+
   font-weight: bold;
   margin-top: $spacing-medium;
   cursor: pointer;
   transition: all 0.2s ease-out;
+}
+
+.list p {
+  font-size: $fs-very-small !important;
 }
 
 .list li:hover {

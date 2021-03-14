@@ -1,9 +1,6 @@
 import React from "react";
-import styles from "../../styles/components/Logo.module.scss";
+import styles from "../styles/components/Logo.module.scss";
 import Link from "next/link";
-import Image from "next/image";
-
-const IMG_SIZE = 75;
 
 const Logo = () => {
   return (

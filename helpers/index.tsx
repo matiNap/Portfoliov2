@@ -3,6 +3,7 @@ import { FaHome } from "react-icons/fa";
 import { GoStar } from "react-icons/go";
 import { RiRocketFill } from "react-icons/ri";
 import { IoMdMail } from "react-icons/io";
+import locales from "../config/locales";
 
 export interface IconProps {
   color: string;
@@ -40,3 +41,7 @@ export const menuData: MenuData = [
     routeKey: "contact",
   },
 ];
+
+export const isLang = (lang: string) => {
+  return Boolean(locales[lang]);
+};

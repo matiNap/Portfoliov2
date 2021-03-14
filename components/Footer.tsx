@@ -1,10 +1,6 @@
 import React from "react";
 
-interface Props {
-  isHidden: boolean;
-}
-
-const Footer = ({ isHidden }: Props) => {
+const Footer = () => {
   return (
     <footer>
       <div>test</div>
