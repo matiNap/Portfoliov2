@@ -1,0 +1,16 @@
+@import '../theme.scss';
+
+.container{
+        background: none;
+        display: flex;
+        width: 30px;
+        height: 30px;
+
+        
+}
+
+.container p{
+    color:$primary-text-color;
+    font-size: $fs-normal;
+    width: 10px;
+}

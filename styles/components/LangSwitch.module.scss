@@ -13,6 +13,11 @@
   box-shadow: 5px 0px 11px -6px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 5px 0px 11px -6px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 5px 0px 11px -6px rgba(0, 0, 0, 0.75);
+
+  @include helpers.for_mobile(){
+    -webkit-tap-highlight-color: transparent;
+    display: none;
+  }
 }
 
 .indicator {
