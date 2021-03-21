@@ -20,6 +20,10 @@
   -moz-box-shadow: 5px 0px 11px -6px rgba(0, 0, 0, 0.75);
   padding-left: 5px;
   padding-right: 5px;
+
+  @include helpers.for_mobile(){
+    display: none;
+  }
 }
 
 .list {

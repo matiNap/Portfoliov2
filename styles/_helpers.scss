@@ -8,3 +8,19 @@
     flex-direction: column;
   }
 }
+
+
+$mobile-breakpoint:800px;
+
+@mixin for_mobile() {
+    @media only screen and (max-width: $mobile-breakpoint) {
+        @content;
+    }
+}
+
+
+@mixin for_desktop() {
+    @media only screen and (min-width: $mobile-breakpoint) {
+        @content;
+    }
+}

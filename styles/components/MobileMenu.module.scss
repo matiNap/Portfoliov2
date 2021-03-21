@@ -1,0 +1,66 @@
+@use '../helpers';
+@import '../theme.scss';
+
+.container {
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  height: 5vh;
+  width: 100vw;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: $spacing-small;
+  padding-bottom: $spacing-small;
+
+  background-color: $primary-color;
+  box-shadow: 5px 0px 11px -6px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 5px 0px 11px -6px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 5px 0px 11px -6px rgba(0, 0, 0, 0.75);
+  padding-left: 5px;
+  padding-right: 5px;
+
+  @include helpers.for_desktop(){
+    display: none
+  }
+}
+
+
+.list{
+  @include helpers.centerFlex(true)
+}
+
+.list li{
+  @include helpers.centerFlex(false);  
+  margin: 0 $spacing-normal 0 $spacing-normal;
+}
+
+.list p{
+  font-size: $fs-very-small;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+.header{
+  padding-left: $spacing-normal;
+  padding-right: $spacing-normal;
+  justify-content: space-between;
+  @include helpers.centerFlex(true);
+  height: 100%;
+
+}
+.headerContainer{
+  
+  position: fixed;
+  top: 0;
+  left:0;
+  width:98vw;
+  height:5rem;
+  background-color: $primary-color;
+}

@@ -33,3 +33,13 @@ ul {
   padding: 0px;
   margin: 0px;
 }
+
+
+button{
+  border: none;
+  outline: none;
+}
+
+button:focus{
+  outline: none;
+}
