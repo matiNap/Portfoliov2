@@ -1,0 +1,25 @@
+@use '../helpers.scss';
+@import '../theme.scss';
+
+
+.container{
+    @include helpers.centerFlex(false);
+    height: 20rem;
+    width: 100%;
+    background-color: darken($secondary-color,5%);
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.iconsRow{
+    @include helpers.centerFlex(true);
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+
+}
+
+.icon{
+    padding-left:5px;
+    padding-right:5px;
+    display: flex;
+}
