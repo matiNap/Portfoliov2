@@ -1,9 +1,9 @@
-import React from "react";
-import { FaHome } from "react-icons/fa";
-import { GoStar } from "react-icons/go";
-import { RiRocketFill } from "react-icons/ri";
-import { IoMdMail } from "react-icons/io";
-import locales from "../config/locales";
+import React from 'react';
+import { FaHome } from 'react-icons/fa';
+import { GoStar } from 'react-icons/go';
+import { RiRocketFill } from 'react-icons/ri';
+import { IoMdMail } from 'react-icons/io';
+import locales from '../config/locales';
 
 export interface IconProps {
   color: string;
@@ -21,27 +21,38 @@ type MenuData = MenuProps[];
 
 export const menuData: MenuData = [
   {
-    title: "Home",
+    title: 'Home',
     icon: ({ color, size }) => <FaHome {...{ color, size }} />,
-    routeKey: "/",
+    routeKey: '/',
   },
   {
-    title: "Experience",
+    title: 'Experience',
     icon: ({ color, size }) => <GoStar {...{ color, size }} />,
-    routeKey: "experience",
+    routeKey: 'experience',
   },
   {
-    title: "Projects",
+    title: 'Projects',
     icon: ({ color, size }) => <RiRocketFill {...{ color, size }} />,
-    routeKey: "projects",
+    routeKey: 'projects',
   },
   {
-    title: "Contact",
+    title: 'Contact',
     icon: ({ color, size }) => <IoMdMail {...{ color, size }} />,
-    routeKey: "contact",
+    routeKey: 'contact',
   },
 ];
 
 export const isLang = (lang: string) => {
   return Boolean(locales[lang]);
+};
+
+const MOBILE_BREAKPOINT = 800;
+export const isMobile = (): boolean => {
+  return true;
+  if (!window) return false;
+  const { innerWidth } = window;
+
+  console.log(innerWidth);
+
+  return innerWidth <= MOBILE_BREAKPOINT;
 };
