@@ -25,16 +25,26 @@
   @include helpers.for_desktop(){
     display: none
   }
+
+  
 }
 
 
 .list{
-  @include helpers.centerFlex(true)
+  @include helpers.centerFlex(true);
+  @include helpers.for_mobile(){
+    justify-content: space-evenly;
+    width: 100%
+  }
+ 
 }
 
 .list li{
   @include helpers.centerFlex(false);  
   margin: 0 $spacing-normal 0 $spacing-normal;
+  @include helpers.for_mobile(){
+    margin: 0;
+  }
 }
 
 .list p{

@@ -25,7 +25,7 @@ const MobileMenu = () => {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
   const props = useSpring({ top: hidden ? '-100px' : '0px' });
-  console.log(hidden);
+
   return (
     <div className={styles.container}>
       {/* Top menu */}

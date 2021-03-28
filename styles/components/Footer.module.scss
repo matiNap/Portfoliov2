@@ -1,0 +1,79 @@
+@use '../helpers.scss';
+@import '../theme.scss';
+
+
+.container{
+    @include helpers.centerFlex(false);
+    height: 15rem;
+    width: 100%;
+    background-color: darken($secondary-color,5%);
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    @include helpers.for_mobile(){
+        padding-bottom: 5.5rem;
+    }
+}
+
+.iconsRow{
+    @include helpers.centerFlex(true);
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    @include helpers.for_mobile(){
+        margin-top: $spacing-small;
+        margin-bottom: $spacing-small;
+    }
+
+}
+.authorContainer{
+    @include helpers.centerFlex(true);
+    @include helpers.for_mobile(){
+        @include helpers.centerFlex(false);
+    }
+
+}
+
+.contactRow{
+    @include helpers.centerFlex(true);
+    margin-top: $spacing-small;
+
+}
+
+.icon{
+    padding-left:5px;
+    padding-right:5px;
+    display: flex;
+    width: 25px;
+    height: 25px;
+}
+
+.contactIcon{
+    display: flex;
+    padding-left:8px;
+    padding-right:8px;
+    cursor: pointer;
+}
+
+.container h4{
+    text-decoration-line: underline;
+    padding:0;
+    margin:0;
+    margin-top: $spacing-normal;
+    color:$accent-color;
+    @include helpers.for_mobile(){
+        font-size: 14px
+    }
+}
+
+.container h3{
+    @include helpers.for_mobile(){
+        font-size: 13px
+    }
+}
+.container h2{
+    @include helpers.for_mobile(){
+        font-size: 13px;
+        text-align: center;
+    }
+}
+
+
