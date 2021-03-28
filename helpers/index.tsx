@@ -48,11 +48,10 @@ export const isLang = (lang: string) => {
 
 const MOBILE_BREAKPOINT = 800;
 export const isMobile = (): boolean => {
-  return true;
+  if (typeof window === 'undefined') return true;
+
   if (!window) return false;
   const { innerWidth } = window;
-
-  console.log(innerWidth);
 
   return innerWidth <= MOBILE_BREAKPOINT;
 };
