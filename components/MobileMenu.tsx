@@ -1,10 +1,4 @@
-import React, {
-  ReactNode,
-  useCallback,
-  useLayoutEffect,
-  useRef,
-  useState,
-} from 'react';
+import React, { useCallback, useLayoutEffect, useRef, useState } from 'react';
 import { menuData } from '../helpers';
 import MenuItem from './MenuItem';
 import LangSelect from './LangSelect';
@@ -15,7 +9,7 @@ import { animated, useSpring } from 'react-spring';
 const MobileMenu = () => {
   const prevScroll = useRef<number>(0);
   const [hidden, setHidden] = useState(false);
-  const onScroll = useCallback((e) => {
+  const onScroll = useCallback(() => {
     if (prevScroll.current < window.scrollY) setHidden(true);
     else setHidden(false);
     prevScroll.current = window.scrollY;
