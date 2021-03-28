@@ -7,8 +7,6 @@ import { useTranslation } from 'react-i18next';
 import useCurrentLang from '../hooks/useCurrentLang';
 import styles from '../styles/components/LangSelect.module.scss';
 
-const CONTAINER_WIDTH = 76;
-
 const LangSwitch = ({}) => {
   // @ts-ignore
   const [_, setCookie] = useCookies(['lang']);

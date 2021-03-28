@@ -1,6 +1,5 @@
 /* eslint-disable react/display-name */
-import React, { ReactNode, useCallback, useLayoutEffect, useRef } from 'react';
-import { useSpring } from 'react-spring';
+import React, { ReactNode } from 'react';
 import Footer from '../components/Footer';
 import LangSwitch from '../components/LangSwitch';
 import MobileMenu from '../components/MobileMenu';

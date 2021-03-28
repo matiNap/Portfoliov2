@@ -5,9 +5,7 @@ import NextLogo from '../assets/next-js.svg';
 import FirebaseLogo from '../assets/firebase.svg';
 import TsLogo from '../assets/ts.svg';
 import { SiReact, SiGithub } from 'react-icons/si';
-import { BiCodeAlt } from 'react-icons/bi';
 import { HiMail } from 'react-icons/hi';
-import { palette } from '../styles/theme';
 
 const Footer = () => {
   const year = moment().year();
