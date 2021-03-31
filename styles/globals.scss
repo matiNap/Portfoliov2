@@ -20,6 +20,7 @@ a {
   margin: 0;
   background-color: $secondary-color;
   min-height: 100vh;
+  padding-left:$web-menu-space;
 }
 
 p {
@@ -43,3 +44,4 @@ button{
 button:focus{
   outline: none;
 }
+
