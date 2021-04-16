@@ -1,5 +1,7 @@
+@use "./helpers.scss";
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap");
 @import "./theme.scss";
+
 
 body {
   padding: 0;
@@ -21,6 +23,9 @@ a {
   background-color: $secondary-color;
   min-height: 100vh;
   padding-left:$web-menu-space;
+  @include helpers.for_mobile(){
+    padding-left: 0;
+  }
 }
 
 p {
