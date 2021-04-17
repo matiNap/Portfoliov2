@@ -17,8 +17,8 @@ const Button = ({ title, onClick, icon, outlined, className }: Props) => {
       } ${className}`}
       onClick={onClick}
     >
-      {/* {icon} */}
-      <p>{title}</p>
+      {icon}
+      <p style={{ marginLeft: icon ? '5px' : 0 }}>{title}</p>
     </button>
   );
 };

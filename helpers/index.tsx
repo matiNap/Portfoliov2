@@ -2,7 +2,6 @@ import React from 'react';
 import { FaHome } from 'react-icons/fa';
 import { GoStar } from 'react-icons/go';
 import { RiRocketFill } from 'react-icons/ri';
-import { IoMdMail } from 'react-icons/io';
 import locales from '../config/locales';
 
 export interface IconProps {
@@ -34,11 +33,6 @@ export const menuData: MenuData = [
     title: 'Projects',
     icon: ({ color, size }) => <RiRocketFill {...{ color, size }} />,
     routeKey: 'projects',
-  },
-  {
-    title: 'Contact',
-    icon: ({ color, size }) => <IoMdMail {...{ color, size }} />,
-    routeKey: 'contact',
   },
 ];
 
