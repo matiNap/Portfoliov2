@@ -7,15 +7,25 @@ import TsLogo from '../assets/ts.svg';
 import JsLogo from '../assets/js.svg';
 import { SiReact } from 'react-icons/si';
 import Button from '../components/Button';
-import { animated, useSpring, useTransition } from 'react-spring';
-import { useEffect, useLayoutEffect } from 'react';
-import { Spring } from 'react-spring/renderprops.cjs';
 import InitXSlide from '../components/InitXSlide';
 import InitYSlide from '../components/InitYSlide';
+import { HiDownload } from 'react-icons/hi';
+import { FiClipboard, FiCheck } from 'react-icons/fi';
+import { palette } from '../styles/theme';
+import copy from 'copy-to-clipboard';
+import { EMAIL } from '../config/consts';
+import { animated, config, useSpring } from 'react-spring';
+import { useState } from 'react';
 
 const Home = () => {
   const { t } = useTranslation();
-
+  const [copied, setCopied] = useState(false);
+  const { number, opacity } = useSpring({
+    number: copied ? 1 : 0,
+    opacity: copied ? 1 : 0,
+    config: config.stiff,
+  });
+  const scale = number.interpolate({ range: [0, 0.5, 1], output: [0, 0.2, 1] });
   return (
     <div>
       <DefaultHead />
@@ -71,16 +81,45 @@ const Home = () => {
             <div className={styles.buttonsWrapper}>
               <InitYSlide from={300} to={0}>
                 <div className={styles.buttons}>
-                  <Button
-                    className={styles.button}
-                    title={t('My email')}
-                    onClick={() => {}}
-                  />
+                  <div className={styles.emailButtonContainer}>
+                    <Button
+                      className={`${styles.button} ${styles.emailButton}`}
+                      title={t('Email')}
+                      onClick={() => {
+                        copy(EMAIL);
+                        setCopied(true);
+                        setTimeout(() => {
+                          setCopied(false);
+                        }, 1500);
+                      }}
+                      icon={
+                        <FiClipboard
+                          style={{ width: '27px', height: '27px' }}
+                          color={palette.text.primary}
+                        />
+                      }
+                    />
+                    <animated.div style={{ opacity, scale }}>
+                      <div className={styles.popup}>
+                        <FiCheck
+                          style={{ width: '23px', height: '23px' }}
+                          color={palette.text.primary}
+                        />
+                        <p>{t('Copied!')}</p>
+                      </div>
+                    </animated.div>
+                  </div>
                   <Button
                     className={styles.button}
                     outlined
                     title="CV"
                     onClick={() => {}}
+                    icon={
+                      <HiDownload
+                        style={{ width: '25px', height: '25px' }}
+                        color={palette.text.primary}
+                      />
+                    }
                   />
                 </div>
               </InitYSlide>

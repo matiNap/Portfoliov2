@@ -25,6 +25,7 @@ a {
   padding-left:$web-menu-space;
   @include helpers.for_mobile(){
     padding-left: 0;
+    min-height: 105vh;
   }
 }
 
