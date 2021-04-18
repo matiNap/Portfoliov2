@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+require('dotenv').config();
 import DefaultHead from '../components/DefaultHead';
 import Background from '../components/Background';
 import withMenu from '../hocs/withMenu';
@@ -25,6 +27,7 @@ const Home = () => {
     opacity: copied ? 1 : 0,
     config: config.stiff,
   });
+
   const scale = number.interpolate({ range: [0, 0.5, 1], output: [0, 0.2, 1] });
   return (
     <div>

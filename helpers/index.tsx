@@ -27,12 +27,12 @@ export const menuData: MenuData = [
   {
     title: 'Experience',
     icon: ({ color, size }) => <GoStar {...{ color, size }} />,
-    routeKey: 'experience',
+    routeKey: '/experience',
   },
   {
     title: 'Projects',
     icon: ({ color, size }) => <RiRocketFill {...{ color, size }} />,
-    routeKey: 'projects',
+    routeKey: '/projects',
   },
 ];
 
