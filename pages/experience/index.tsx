@@ -4,7 +4,6 @@ import DefaultHead from '../../components/DefaultHead';
 import withMenu from '../../hocs/withMenu';
 import TimeItem from './components/TimeItem';
 import styles from '../../styles/Experience.module.scss';
-import TimeSeparator from './components/TimeSeparator';
 
 const Experience = () => {
   return (
