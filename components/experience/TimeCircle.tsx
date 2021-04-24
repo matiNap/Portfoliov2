@@ -14,7 +14,7 @@ const TimeCircle = ({ data }: Props) => {
     <div style={{ display: 'flex' }}>
       <span className={styles.circle} />
       <TimeContent data={data} />
-      <TimeLabel title="Title" subTitle={date} />
+      <TimeLabel title={data.title} subTitle={date} />
     </div>
   );
 };
