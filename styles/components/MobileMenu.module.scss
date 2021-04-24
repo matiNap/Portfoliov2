@@ -5,7 +5,7 @@
   position: fixed;
   left: 0px;
   bottom: 0px;
-  height: 5vh;
+  height: $web-mobile-menu-height;
   width: 100vw;
 
   display: flex;
@@ -71,6 +71,6 @@
   top: 0;
   left:0;
   width:100vw;
-  height:5rem;
+  height:$web-mobile-menu-height;
   background-color: $primary-color;
 }
