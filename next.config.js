@@ -26,4 +26,7 @@ module.exports = {
     //   },
     // ],
   },
+  images: {
+    domains: ['cdn.eso.org'],
+  },
 };
