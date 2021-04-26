@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Background from '../../components/Background';
 import DefaultHead from '../../components/DefaultHead';
 import withMenu from '../../hocs/withMenu';
@@ -36,19 +36,29 @@ interface Props {
 }
 
 const Experience = ({ data }: Props) => {
+  const [selectedGalleryIndex, setSelectedGalleryIndex] = useState<
+    null | number
+  >(null);
+
   return (
     <div>
       <DefaultHead />
       <Background>
         <ul className={styles.container}>
           {data &&
-            data.map((projectData) => (
+            data.map((projectData, index) => (
               <InitYSlide
                 from={getRandomInt(-100, -1000)}
                 key={projectData.key}
                 to={0}
               >
-                <ProjectTab data={projectData} />
+                <ProjectTab
+                  select={() => {
+                    setSelectedGalleryIndex(index);
+                  }}
+                  data={projectData}
+                  selected={selectedGalleryIndex === index}
+                />
               </InitYSlide>
             ))}
         </ul>

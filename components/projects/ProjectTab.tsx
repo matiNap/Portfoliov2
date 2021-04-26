@@ -5,25 +5,21 @@ import Link from '../../components/projects/Link';
 import { SiGithub } from 'react-icons/si';
 import { DiAndroid, DiApple } from 'react-icons/di';
 import { CgWebsite } from 'react-icons/cg';
+import Images from './Images';
 
 interface Props {
   data: ProjectData;
+  selected: boolean;
+  select: () => void;
 }
 
-const ProjectTab = ({ data }: Props) => {
+const ProjectTab = ({ data, selected, select }: Props) => {
   const { images, title, description, ios, android, website, github } = data;
 
   return (
     <li className={styles.projectTab}>
-      {images &&
-        images.map((imgUri) => (
-          <img
-            key={imgUri}
-            className={styles.imageContainer}
-            alt={title}
-            src="https://cdn.eso.org/images/thumb300y/eso1907a.jpg"
-          />
-        ))}
+      <Images {...{ images, selected }} select={select} />
+
       <div className={styles.content}>
         <h2>{title}</h2>
         <p>{description}</p>
