@@ -1,104 +1,120 @@
 @use './helpers';
 @import './theme.scss';
 
-.container{
-  display: flex;    
-  @include helpers.for_desktop(){
+.container {
+  display: flex;
+  @include helpers.for_desktop() {
     flex-wrap: wrap;
   }
-  @include helpers.for_mobile(){
+  @include helpers.for_mobile() {
     flex-direction: column;
     align-items: center;
-
   }
   padding-top: 3rem;
-  padding-left:$spacing-normal;
-  padding-right:$spacing-normal;
+  padding-left: $spacing-normal;
+  padding-right: $spacing-normal;
 
-  padding-bottom:5rem;
-
+  padding-bottom: 5rem;
 }
-$mobile-image-height:38vh;
-$desktop-image-height:38vh;
-.projectTab{
-    display: flex;
-    -webkit-box-shadow: 2px 3px 15px -1px rgba(0,0,0,0.48); 
-    box-shadow: 2px 3px 15px -1px rgba(0,0,0,0.48);
-    border-radius: 15px;
-    margin-top: 3rem;
-    
-    @include helpers.for_desktop(){
-      width: 25vw;
-      height: 72vh;
-      margin-right:5rem;
-    }
+$mobile-image-height: 38vh;
+$mobile-image-width: 90vw;
 
-    @include helpers.for_mobile(){
-      width: 90vw;
-      height:80vh;
-      align-self: center;
-      display: block;
-    
-    }
-   
+$desktop-image-height: 38vh;
+$desktop-image-width: 25vw;
 
+.projectTab {
+  display: flex;
+  -webkit-box-shadow: 2px 3px 15px -1px rgba(0, 0, 0, 0.48);
+  box-shadow: 2px 3px 15px -1px rgba(0, 0, 0, 0.48);
+  border-radius: 15px;
+  margin-top: 3rem;
+  flex-direction: column;
+
+
+  @include helpers.for_desktop() {
+    width: $desktop-image-width;
+    height: 72vh;
+    margin-right: 5rem;
+  }
+
+  @include helpers.for_mobile() {
+    width: $mobile-image-width;
+    height: 80vh;
+    align-self: center;
+    display: block;
+  }
 }
 
-
-.imageContainer{
+.imageContainer {
   position: absolute;
   border-radius: 12px;
-  @include helpers.for_desktop(){
-    width: 25vw;
-    height:$desktop-image-height;
+  @include helpers.for_desktop() {
+    width: $desktop-image-width;
+    height: $desktop-image-height;
   }
 
-  @include helpers.for_mobile(){
-    width: 90vw;
-    height:$mobile-image-height;
-    
+  @include helpers.for_mobile() {
+    width: $mobile-image-width;
+    height: $mobile-image-height;
   }
+  z-index: 10;
 }
 
-.content{
+.imagesContainer {
+  display: flex;
+  @include helpers.for_desktop() {
+    width: $desktop-image-width;
+    height: $desktop-image-height;
+  }
+
+  @include helpers.for_mobile() {
+    width: $mobile-image-width;
+    height: $mobile-image-height;
+  }
+  justify-content: center;
+}
+
+.content {
   padding: $spacing-small;
-  @include helpers.for_desktop(){
-    margin-top: $desktop-image-height;
-  }
-  @include helpers.for_mobile(){
-    margin-top: $mobile-image-height;
+  display: flex;
+  flex-direction: column;
+  // @include helpers.for_desktop(){
+  //   margin-top: $desktop-image-height;
+  // }
+  // @include helpers.for_mobile(){
+  //   padding-top: $mobile-image-height;
 
-  }
+  // }
 }
 
-.content p{
-  @include helpers.for_desktop(){
+.content p {
+  @include helpers.for_desktop() {
     font-size: $fs-medium-small;
   }
-  @include helpers.for_mobile(){
+  @include helpers.for_mobile() {
     font-size: $fs-small;
   }
   margin-bottom: $spacing-normal;
 
   overflow: hidden;
-   text-overflow: ellipsis;
-   display: -webkit-box;
-   -webkit-line-clamp: 4; 
-   -webkit-box-orient: vertical;
-   max-width: 95%;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  max-width: 95%;
 }
 
-.content h2{
-  margin:0;
+.content h2 {
+  margin: 0;
 }
 
-
-.linkContainer{
+.linkContainer {
   margin-top: 1rem;
-  @include helpers.centerFlex(true);
+  display: flex;
+  align-items: center;
 }
 
-.linkContainer a{
+.linkContainer a {
   text-decoration-line: underline;
   color: $accent-color;
   text-decoration-color: $accent-color;
@@ -108,15 +124,38 @@ $desktop-image-height:38vh;
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 75%;
-
-
-
 }
-.linkContainer p{
+.linkContainer p {
   color: $accent-color;
   font-weight: bold;
   margin-left: $spacing-small;
   display: flex;
   margin-bottom: 0;
+}
 
+.dots {
+  @include helpers.centerFlex(true);
+  z-index: 20;
+
+  align-self: flex-end;
+  margin-bottom: $spacing-small;
+  justify-content: center;
+}
+
+$dot-size: 10px;
+.dots span {
+  width: $dot-size;
+  height: $dot-size;
+  border-radius: $dot-size;
+  cursor: pointer;
+  margin-left: 8px;
+  background-color: $accent-color;
+}
+
+.modalBackground{
+  background-color: rgba(0,0,0,0.6);
+  position: fixed;
+  width: 100vw;
+  height:100vh;
+  z-index: 60;
 }

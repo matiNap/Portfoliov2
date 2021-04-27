@@ -7,6 +7,7 @@ import firestore from '../api';
 import { ProjectData } from '../../types';
 import ProjectTab from '../../components/projects/ProjectTab';
 import InitYSlide from '../../components/InitYSlide';
+import GalleryModal from '../../components/projects/GalleryModal';
 
 function getRandomInt(min: number, max: number): number {
   min = Math.ceil(min);
@@ -39,9 +40,10 @@ const Experience = ({ data }: Props) => {
   const [selectedGalleryIndex, setSelectedGalleryIndex] = useState<
     null | number
   >(null);
-
+  console.log(selectedGalleryIndex);
   return (
     <div>
+      <GalleryModal />
       <DefaultHead />
       <Background>
         <ul className={styles.container}>

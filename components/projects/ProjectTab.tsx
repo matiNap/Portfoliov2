@@ -17,19 +17,25 @@ const ProjectTab = ({ data, selected, select }: Props) => {
   const { images, title, description, ios, android, website, github } = data;
 
   return (
-    <li className={styles.projectTab}>
-      <Images {...{ images, selected }} select={select} />
+    <>
+      <li className={styles.projectTab}>
+        <Images {...{ images, selected }} select={select} />
 
-      <div className={styles.content}>
-        <h2>{title}</h2>
-        <p>{description}</p>
-        {website && <Link icon={<CgWebsite size={22} />} uri={website} />}
-        <Link icon={<SiGithub size={22} />} uri={github} isPrivate={!github} />
+        <div className={styles.content}>
+          <h2>{title}</h2>
+          <p>{description}</p>
+          {website && <Link icon={<CgWebsite size={22} />} uri={website} />}
+          <Link
+            icon={<SiGithub size={22} />}
+            uri={github}
+            isPrivate={!github}
+          />
 
-        {android && <Link icon={<DiAndroid size={22} />} uri={android} />}
-        {ios && <Link icon={<DiApple size={22} />} uri={ios} />}
-      </div>
-    </li>
+          {android && <Link icon={<DiAndroid size={22} />} uri={android} />}
+          {ios && <Link icon={<DiApple size={22} />} uri={ios} />}
+        </div>
+      </li>
+    </>
   );
 };
 
