@@ -36,7 +36,7 @@ const Home = () => {
       <Background>
         <div className={styles.container}>
           <InitXSlide from={-200} to={0}>
-            <h1>{t('Hi,')}</h1>
+            <h1>{t('Hi')},</h1>
           </InitXSlide>
           <InitXSlide from={-500} to={0}>
             <h1>{t('I am Mateusz Napieralski')}</h1>
@@ -51,7 +51,7 @@ const Home = () => {
             <div>
               <InitXSlide from={-300} to={0}>
                 <h1 className={styles.toolsHeader}>
-                  Frameworks and languages I work with:
+                  {t('Frameworks and languages I work with')}:
                 </h1>
               </InitXSlide>
               <ul>
@@ -116,7 +116,9 @@ const Home = () => {
                     className={styles.button}
                     outlined
                     title="CV"
-                    onClick={() => {}}
+                    onClick={() => {
+                      window.open(process.env.CV_URL, '_blank');
+                    }}
                     icon={
                       <HiDownload
                         style={{ width: '25px', height: '25px' }}

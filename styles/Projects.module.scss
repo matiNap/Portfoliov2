@@ -1,0 +1,212 @@
+@use './helpers';
+@import './theme.scss';
+
+.container {
+  display: flex;
+  @include helpers.for_desktop() {
+    flex-wrap: wrap;
+  }
+  @include helpers.for_mobile() {
+    flex-direction: column;
+    align-items: center;
+  }
+  padding-top: 3rem;
+  padding-left: $spacing-normal;
+  padding-right: $spacing-normal;
+
+  padding-bottom: 5rem;
+}
+$mobile-image-height: 38vh;
+$mobile-image-width: 90vw;
+
+$desktop-image-height: 38vh;
+$desktop-image-width: 25vw;
+
+.projectTab {
+  display: flex;
+  -webkit-box-shadow: 2px 3px 15px -1px rgba(0, 0, 0, 0.48);
+  box-shadow: 2px 3px 15px -1px rgba(0, 0, 0, 0.48);
+  border-radius: 15px;
+  margin-top: 3rem;
+  flex-direction: column;
+
+
+  @include helpers.for_desktop() {
+    width: $desktop-image-width;
+    height: 72vh;
+    margin-right: 5rem;
+  }
+
+  @include helpers.for_mobile() {
+    width: $mobile-image-width;
+    height: 80vh;
+    align-self: center;
+    display: block;
+  }
+}
+
+.imageContainer {
+  position: absolute;
+  border-radius: 12px;
+  @include helpers.for_desktop() {
+    width: $desktop-image-width;
+    height: $desktop-image-height;
+  }
+
+  @include helpers.for_mobile() {
+    width: $mobile-image-width;
+    height: $mobile-image-height;
+  }
+  z-index: 10;
+}
+
+.imagesContainer {
+  display: flex;
+  @include helpers.for_desktop() {
+    width: $desktop-image-width;
+    height: $desktop-image-height;
+  }
+
+  @include helpers.for_mobile() {
+    width: $mobile-image-width;
+    height: $mobile-image-height;
+  }
+  justify-content: center;
+}
+
+.content {
+  padding: $spacing-small;
+  display: flex;
+  flex-direction: column;
+  // @include helpers.for_desktop(){
+  //   margin-top: $desktop-image-height;
+  // }
+  // @include helpers.for_mobile(){
+  //   padding-top: $mobile-image-height;
+
+  // }
+}
+
+.content p {
+  @include helpers.for_desktop() {
+    font-size: $fs-medium-small;
+  }
+  @include helpers.for_mobile() {
+    font-size: $fs-small;
+  }
+  margin-bottom: $spacing-normal;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  max-width: 95%;
+}
+
+.content h2 {
+  margin: 0;
+}
+
+.linkContainer {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.linkContainer a {
+  text-decoration-line: underline;
+  color: $accent-color;
+  text-decoration-color: $accent-color;
+  font-weight: bold;
+  margin-left: $spacing-small;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 75%;
+}
+.linkContainer p {
+  color: $accent-color;
+  font-weight: bold;
+  margin-left: $spacing-small;
+  display: flex;
+  margin-bottom: 0;
+}
+
+.dots {
+  @include helpers.centerFlex(true);
+  z-index: 20;
+  align-self: flex-end;
+  margin-bottom: $spacing-small;
+  justify-content: center;
+}
+
+$dot-size: 10px;
+.dots span {
+  width: $dot-size;
+  height: $dot-size;
+  border-radius: $dot-size;
+  cursor: pointer;
+  margin-left: 8px;
+  background-color: $accent-color;
+  transition: transform .15s ease-in-out; 
+
+}
+
+.dots span:hover {
+  transform: scale(1.3) !important;
+}
+
+.modalBackground{
+  background-color: rgba(0,0,0,0.8);
+  position: fixed;
+  width: 100vw;
+  height:100vh;
+  z-index: 60;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+
+.modalBackground .imagesContainer{
+  width: 70vw;
+  height: 80vh;
+
+}
+.modalBackground .imageContainer{
+  width: 70vw;
+  height: 80vh;
+  object-fit: contain;
+  
+
+}
+
+.closeButton{
+  position: fixed;
+  top:25px;
+  right:25px;
+ 
+  cursor: pointer;
+}
+
+.counter{
+  position: fixed;
+  bottom: 5%;
+  left:50vw;
+  transform:  translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+ 
+  align-items: center;
+
+}
+
+.counter button{
+  display: flex;
+  margin-left: 5rem;
+  cursor: pointer;
+  margin-right: 5rem;
+}
+
