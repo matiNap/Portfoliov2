@@ -10,7 +10,7 @@ import Images from './Images';
 interface Props {
   data: ProjectData;
   selected: boolean;
-  select: () => void;
+  select: (index: number) => void;
 }
 
 const ProjectTab = ({ data, selected, select }: Props) => {

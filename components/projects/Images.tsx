@@ -1,17 +1,21 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { animated, useSpring } from 'react-spring';
 import styles from '../../styles/Projects.module.scss';
+import Counter from './Counter';
 import Indicator from './Indicators';
 
 interface Props {
   images?: string[];
-  selected: boolean;
-  select: () => void;
+  select: (image: number) => void;
+  selectedImageIndex?: null | number;
+  withCounter?: boolean;
 }
 
-const Images = ({ images, selected, select }: Props) => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(1);
-
+const Images = ({ images, select, selectedImageIndex, withCounter }: Props) => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  useEffect(() => {
+    if (selectedImageIndex) setCurrentImageIndex(selectedImageIndex);
+  }, [selectedImageIndex]);
   return (
     <>
       <animated.div className={styles.imagesContainer}>
@@ -23,7 +27,7 @@ const Images = ({ images, selected, select }: Props) => {
             });
             return (
               <animated.img
-                onClick={select}
+                onClick={() => select(currentImageIndex)}
                 style={imageProps}
                 key={imgUri}
                 className={styles.imageContainer}
@@ -33,11 +37,20 @@ const Images = ({ images, selected, select }: Props) => {
             );
           })}
 
-        <Indicator
-          selectedIndex={currentImageIndex}
-          data={images}
-          setCurrentImageIndex={setCurrentImageIndex}
-        />
+        {!withCounter && (
+          <Indicator
+            selectedIndex={currentImageIndex}
+            data={images}
+            setCurrentImageIndex={setCurrentImageIndex}
+          />
+        )}
+        {withCounter && (
+          <Counter
+            currentIndex={currentImageIndex}
+            maxCount={images ? images.length : 0}
+            setCurrentImageIndex={setCurrentImageIndex}
+          />
+        )}
       </animated.div>
     </>
   );

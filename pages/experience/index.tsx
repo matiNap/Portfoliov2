@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import React from 'react';
 import Background from '../../components/Background';
 import DefaultHead from '../../components/DefaultHead';
@@ -7,9 +9,10 @@ import styles from '../../styles/Experience.module.scss';
 import firestore from '../api';
 import { ExperienceData } from '../../types';
 
-export const getStaticProps = async () => {
+export const getStaticProps = async (context: { locale: string }) => {
+  const { locale } = context;
   try {
-    const response = await firestore().collection('experience').get();
+    const response = await firestore().collection(`experience-${locale}`).get();
 
     return {
       props: {

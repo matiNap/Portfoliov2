@@ -40,10 +40,21 @@ const Experience = ({ data }: Props) => {
   const [selectedGalleryIndex, setSelectedGalleryIndex] = useState<
     null | number
   >(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   console.log(selectedGalleryIndex);
   return (
     <div>
-      <GalleryModal />
+      <GalleryModal
+        images={
+          selectedGalleryIndex !== null
+            ? data[selectedGalleryIndex].images
+            : null
+        }
+        currentImageIndex={currentImageIndex}
+        closeModal={() => {
+          setSelectedGalleryIndex(null);
+        }}
+      />
       <DefaultHead />
       <Background>
         <ul className={styles.container}>
@@ -55,7 +66,8 @@ const Experience = ({ data }: Props) => {
                 to={0}
               >
                 <ProjectTab
-                  select={() => {
+                  select={(currentImageIndex) => {
+                    setCurrentImageIndex(currentImageIndex);
                     setSelectedGalleryIndex(index);
                   }}
                   data={projectData}
