@@ -1,13 +1,12 @@
-import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
-import { useCookies } from "react-cookie";
-import { LANG_EN } from "../i18n";
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
+import { useCookies } from 'react-cookie';
+import { LANG_EN } from '../i18n';
 
 const useCurrentLang = () => {
-  const [cookie] = useCookies(["lang"]);
+  const [cookie] = useCookies(['lang']);
   const router = useRouter();
   const [currentLang, setCurrentLang] = useState(LANG_EN);
-
   useEffect(() => {
     const { user } = cookie;
     const { locale } = router;

@@ -34,7 +34,7 @@ const LangSwitch = ({}) => {
         setToggle(!toggle);
 
         const newLang = !toggle ? LANG_EN : LANG_PL;
-        router.push(`/${newLang}`, undefined, {
+        router.push(`${router.pathname}${newLang}`, undefined, {
           shallow: true,
           locale: newLang,
         });

@@ -14,17 +14,19 @@ const LangWrapper = ({ children }: Props) => {
   const [cookie, setCookie] = useCookies(['lang']);
   const { i18n } = useTranslation();
   const currentLang = useCurrentLang();
+  const { pathname } = useRouter();
   useEffect(() => {
     const { locale } = router;
     const { user } = cookie;
 
-    if (locale) {
+    if (locale && pathname !== '/404') {
       if (!user || !user.lang)
         setCookie('lang', JSON.stringify({ lang: locale }));
       i18n.changeLanguage(currentLang);
+
       if (currentLang)
         router.replace(
-          `${router.pathname}${currentLang === LANG_EN ? '' : LANG_PL}`,
+          `${currentLang === LANG_EN ? '' : LANG_PL}${router.pathname}`,
         );
     }
   }, [currentLang]);

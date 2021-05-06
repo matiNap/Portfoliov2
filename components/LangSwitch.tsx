@@ -33,7 +33,7 @@ const LangSwitch = ({}) => {
         setLeftToggled(!leftToggled);
         const newLang = leftToggled ? LANG_EN : LANG_PL;
 
-        router.push(`/${newLang}`, undefined, {
+        router.push(`${newLang}${router.pathname}`, undefined, {
           shallow: true,
           locale: newLang,
         });

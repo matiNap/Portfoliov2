@@ -1,0 +1,45 @@
+@use "./_helpers.scss";
+@import "./theme.scss";
+
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    @include helpers.for_desktop(){
+        padding-top: 10rem;
+    }
+    @include helpers.for_mobile(){
+        padding-top: 5rem;
+    }
+    max-height: 99vh;
+}
+
+
+.container h1{
+    font-size: 100px;
+    color:$accent-color;
+
+}
+
+.container h2{
+    @include helpers.for_mobile(){
+        font-size: 30px;
+    }
+    @include helpers.for_desktop(){
+        font-size: 40px;
+    }
+}
+
+.container button{
+    margin-top: 2.5rem;
+    font-size: 50px;
+    width: 17rem;
+    @include helpers.for_mobile(){
+        width: 100%;
+    }
+}

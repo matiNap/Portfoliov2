@@ -15,9 +15,10 @@ function getRandomInt(min: number, max: number): number {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
-export const getStaticProps = async () => {
+export const getStaticProps = async (context: { locale: string }) => {
   try {
-    const response = await firestore().collection('projects-mockup').get();
+    const { locale } = context;
+    const response = await firestore().collection(`projects-${locale}`).get();
 
     return {
       props: {
